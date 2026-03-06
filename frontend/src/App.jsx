@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
-import AdminDashboard from './dashboard/AdminDashboard';
+import AdminDashboard from './pages/AdminDashboard';
 import StudentDashboard from './dashboard/StudentDashboard';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
@@ -27,7 +27,6 @@ const App = () => (
         path="/admin"
         element={
           <ProtectedRoute role="admin">
-            <Navbar />
             <AdminDashboard />
           </ProtectedRoute>
         }

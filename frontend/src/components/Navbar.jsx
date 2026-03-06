@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -7,25 +8,64 @@ const Navbar = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <nav className="glass sticky top-0 z-50 mx-auto mt-2 flex w-[95%] items-center justify-between rounded-2xl px-6 py-3">
-      <Link to="/" className="text-lg font-bold text-primary">UG TRB Academy</Link>
-      <div className="flex items-center gap-4">
-        <button onClick={() => setLanguage(language === 'en' ? 'ta' : 'en')} className="rounded-xl bg-secondary px-3 py-1 text-white">
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="glass sticky top-4 z-50 mx-auto mt-2 flex w-[95%] max-w-7xl items-center justify-between rounded-2xl px-6 py-4 shadow-2xl"
+    >
+      <Link to="/" className="flex items-center space-x-2">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold text-xl">
+          ப
+        </div>
+        <span className="text-xl font-bold text-gradient hidden sm:block">பாரி செந்தமிழ் கல்வி</span>
+        <span className="text-lg font-bold text-primary-700 sm:hidden">பாரி</span>
+      </Link>
+
+      <div className="flex items-center gap-3">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setLanguage(language === 'en' ? 'ta' : 'en')}
+          className="rounded-xl bg-gradient-to-r from-secondary-500 to-secondary-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-glow-secondary"
+        >
           {language === 'en' ? 'தமிழ்' : 'EN'}
-        </button>
+        </motion.button>
+
         {!user ? (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register" className="rounded-xl bg-primary px-3 py-1 text-white">Register</Link>
-          </>
+          <div className="flex items-center gap-3">
+            <Link
+              to="/login"
+              className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-300"
+            >
+              Login
+            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link to="/register" className="btn-primary text-sm">
+                Register
+              </Link>
+            </motion.div>
+          </div>
         ) : (
-          <>
-            <Link to={user.role === 'admin' ? '/admin' : '/dashboard'}>Dashboard</Link>
-            <button onClick={logout} className="rounded-xl bg-accent px-3 py-1 text-white">Logout</button>
-          </>
+          <div className="flex items-center gap-3">
+            <Link
+              to={user.role === 'admin' ? '/admin' : '/dashboard'}
+              className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-300"
+            >
+              Dashboard
+            </Link>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={logout}
+              className="btn-accent text-sm"
+            >
+              Logout
+            </motion.button>
+          </div>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -10,7 +10,9 @@ const userSchema = new mongoose.Schema(
     enrolledCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
     language: { type: String, enum: ['en', 'ta'], default: 'en' },
     streak: { type: Number, default: 0 },
-    badges: [{ type: String }]
+    badges: [{ type: String }],
+    resetPasswordToken: { type: String },
+    resetPasswordExpiry: { type: Date }
   },
   { timestamps: true }
 );
