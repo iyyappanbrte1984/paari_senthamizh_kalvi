@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaClock, FaRupeeSign, FaStar } from 'react-icons/fa';
+import { FaClock, FaRupeeSign, FaStar, FaPlay } from 'react-icons/fa';
 
 const CourseCard = ({ course, onEnroll }) => (
   <motion.div
@@ -67,7 +67,7 @@ const CourseCard = ({ course, onEnroll }) => (
           onClick={onEnroll}
         >
           <span className="relative z-10 flex items-center gap-2">
-            <FaRocket className="h-4 w-4" />
+            <FaPlay className="h-4 w-4" />
             Enroll Now
           </span>
           {/* Button glow effect */}

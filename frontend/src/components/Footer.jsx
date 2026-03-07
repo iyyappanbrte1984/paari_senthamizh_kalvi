@@ -21,13 +21,13 @@ const Footer = () => (
           </p>
           <div className="flex space-x-4">
             {[
-              { icon: FaFacebook, href: '#', color: 'hover:text-blue-400' },
-              { icon: FaInstagram, href: '#', color: 'hover:text-pink-400' },
-              { icon: FaYoutube, href: '#', color: 'hover:text-red-400' },
-              { icon: FaTelegram, href: '#', color: 'hover:text-blue-300' }
-            ].map(({ icon: Icon, href, color }) => (
+              { icon: FaFacebook, href: '#', color: 'hover:text-blue-400', name: 'facebook' },
+              { icon: FaInstagram, href: '#', color: 'hover:text-pink-400', name: 'instagram' },
+              { icon: FaYoutube, href: '#', color: 'hover:text-red-400', name: 'youtube' },
+              { icon: FaTelegram, href: '#', color: 'hover:text-blue-300', name: 'telegram' }
+            ].map(({ icon: Icon, href, color, name }) => (
               <a
-                key={href}
+                key={name}
                 href={href}
                 className={`text-neutral-400 transition-colors duration-300 ${color}`}
               >
