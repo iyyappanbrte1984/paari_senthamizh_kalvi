@@ -1,10 +1,12 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import fileUpload from 'express-fileupload';
+import rateLimit from 'express-rate-limit';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import { connectDB } from './config/db.js';
@@ -15,6 +17,7 @@ import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import courseRoutes from './routes/courseRoutes.js';
 import materialRoutes from './routes/materialRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
 import testRoutes from './routes/testRoutes.js';
 import videoRoutes from './routes/videoRoutes.js';
 import { performanceMiddleware, healthCheckHandler, getMetricsHandler } from './utils/performance.js';
@@ -227,6 +230,7 @@ app.use('/api/courses', courseRoutes);
 app.use('/api/tests', testRoutes);
 app.use('/api/materials', materialRoutes);
 app.use('/api/videos', videoRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use('/api/admin', adminRoutes);
 
 // Socket.IO connection handling
