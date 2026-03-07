@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useAuth } from '../context/AuthContext';
+import { FaBell } from 'react-icons/fa';
+import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
+import NotificationPanel from './NotificationPanel';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { language, setLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const [showNotifications, setShowNotifications] = useState(false);
 
   return (
     <motion.nav
@@ -26,11 +30,29 @@ const Navbar = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={toggleTheme}
+          className="rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-glow-accent"
+        >
+          {theme === 'light' ? '🌙' : '☀️'}
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => setLanguage(language === 'en' ? 'ta' : 'en')}
           className="rounded-xl bg-gradient-to-r from-secondary-500 to-secondary-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-glow-secondary"
         >
           {language === 'en' ? 'தமிழ்' : 'EN'}
         </motion.button>
+        {user && (
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setShowNotifications(true)}
+            className="relative rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-glow-primary"
+          >
+            <FaBell />
+          </motion.button>
+        )}
 
         {!user ? (
           <div className="flex items-center gap-3">
@@ -66,7 +88,11 @@ const Navbar = () => {
         )}
       </div>
     </motion.nav>
-  );
-};
+    <NotificationPanel
+      isOpen={showNotifications}
+      onClose={() => setShowNotifications(false)}
+    />
+  </>
+);
 
 export default Navbar;
