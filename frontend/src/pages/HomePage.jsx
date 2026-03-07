@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import CourseCard from '../components/CourseCard';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import api from '../services/api';
 
 const courseData = [
@@ -83,10 +83,10 @@ const stats = [
 
 const HomePage = () => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
   const [showParticles, setShowParticles] = useState(true);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
@@ -108,27 +108,13 @@ const HomePage = () => {
     fetchCourses();
   }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
-  const handleStartJourney = () => {
-    navigate('/register');
-  };
-
-  const handleWatchDemo = () => {
-    // For now, just navigate to login - can be updated to show demo video later
-    navigate('/login');
-  };
-
   const handleEnroll = (course) => {
     // Navigate to login for enrollment
     navigate('/login');
   };
 
   return (
-    <div className={`min-h-screen transition-all duration-500 ${darkMode ? 'bg-neutral-900' : 'gradient-bg-ultra'} overflow-hidden`}>
+    <div className={`min-h-screen transition-all duration-500 ${theme === 'dark' ? 'bg-neutral-900' : 'gradient-bg-ultra'} overflow-hidden`}>
       {/* Ultra-modern particle effects */}
       <AnimatePresence>
         {showParticles && (
@@ -193,41 +179,6 @@ const HomePage = () => {
           }}
         />
       </div>
-
-      {/* Dark mode toggle */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, type: "spring", stiffness: 200 }}
-        onClick={toggleDarkMode}
-        className="fixed top-6 right-6 z-50 p-3 rounded-2xl glass-ultra card-ultra-hover"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <AnimatePresence mode="wait">
-          {darkMode ? (
-            <motion.div
-              key="sun"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <FaSun className="h-5 w-5 text-yellow-500" />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="moon"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <FaMoon className="h-5 w-5 text-blue-500" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.button>
 
       <Navbar />
 
