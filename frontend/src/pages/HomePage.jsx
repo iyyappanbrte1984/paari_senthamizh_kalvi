@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { useTheme } from '../context/ThemeContext';
 import api from '../services/api';
-
+import { useLanguage } from '../context/LanguageContext';
 const courseData = [
   {
     title: 'UG TRB Mathematics',
