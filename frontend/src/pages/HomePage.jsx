@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { FaPlay, FaBook, FaChartLine, FaUsers, FaStar, FaAward, FaCheckCircle, FaRocket, FaBrain, FaTrophy, FaMoon, FaSun, FaSparkles } from 'react-icons/fa';
+import { FaPlay, FaBook, FaChartLine, FaUsers, FaStar, FaAward, FaCheckCircle, FaRocket, FaBrain, FaTrophy, FaMoon, FaSun, FaMagic } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CourseCard from '../components/CourseCard';
@@ -252,7 +252,7 @@ const HomePage = () => {
                 className="mb-6"
               >
                 <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 px-4 py-2 text-sm font-semibold text-primary-700 mb-4 glass-ultra">
-                  <FaSparkles className="h-4 w-4" />
+                  <FaMagic className="h-4 w-4" />
                   🎓 Tamil Nadu's Premier UG TRB Coaching
                 </span>
               </motion.div>
@@ -334,7 +334,7 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Section */}
       <motion.section className="container-padding mx-auto max-w-7xl" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>

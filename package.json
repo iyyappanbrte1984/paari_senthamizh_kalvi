@@ -2,7 +2,10 @@
   "name": "ug-trb-coaching-platform",
   "private": true,
   "version": "1.0.0",
-  "workspaces": ["frontend", "backend"],
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
     "install:all": "npm install --workspaces",
     "dev": "concurrently \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
@@ -10,6 +13,8 @@
     "start": "npm run start --workspace backend"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
     "concurrently": "^9.0.1"
   }
 }

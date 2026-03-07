@@ -12,3 +12,18 @@
 {"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T17:17:52.514Z"}
 {"level":"info","message":"::1 - - [06/Mar/2026:17:17:56 +0000] \"GET / HTTP/1.1\" 404 32 \"https://ubiquitous-capybara-r6p7v6rvv44h4jg.github.dev/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T17:17:56.389Z"}
 {"level":"info","message":"::1 - - [06/Mar/2026:17:24:02 +0000] \"GET /api/courses HTTP/1.1\" 200 673 \"-\" \"curl/8.5.0\"","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T17:24:02.285Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T17:59:21.337Z"}
+{"level":"info","message":"::1 - - [06/Mar/2026:17:59:28 +0000] \"GET / HTTP/1.1\" 404 32 \"https://turbo-fortnight-r6p7v6rvqqjhxxqr.github.dev/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T17:59:28.948Z"}
+{"level":"info","message":"::1 - - [06/Mar/2026:17:59:29 +0000] \"GET /favicon.ico HTTP/1.1\" 404 43 \"https://turbo-fortnight-r6p7v6rvqqjhxxqr-5000.app.github.dev/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T17:59:29.346Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:06:47.753Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:06:54.943Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:06:56.953Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:03.011Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:05.570Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:09.101Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:10.885Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:17.563Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:19.647Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:25.048Z"}
+{"level":"info","message":"Server running on port 5000 in development mode","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:33.959Z"}
+{"level":"info","message":"::1 - - [06/Mar/2026:18:07:39 +0000] \"GET / HTTP/1.1\" 404 32 \"https://turbo-fortnight-r6p7v6rvqqjhxxqr.github.dev/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"paari-senthamizh-kalvi-backend","timestamp":"2026-03-06T18:07:39.266Z"}

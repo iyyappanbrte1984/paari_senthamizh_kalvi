@@ -230,7 +230,4 @@ export default {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
-}
-  },
-  plugins: []
 };
